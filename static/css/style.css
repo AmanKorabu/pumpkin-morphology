@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@400;600;700&display=swap');
+
+:root {
+    --pumpkin-glow: #ff7e00;    /* Bright Neon Orange */
+    --pumpkin-dim: #e65100;     /* Deep Burnt Orange */
+    --glass-surface: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-white: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.6);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #0f0a05; /* Extremely dark brown/black */
+    /* Atmospheric Glow Background */
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(230, 81, 0, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(191, 54, 12, 0.15) 0%, transparent 40%);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Lock screen scroll */
+}
+
+/* --- THE MAIN GLASS DASHBOARD --- */
+.glass-dashboard {
+    display: flex;
+    width: 90vw;
+    max-width: 950px;
+    height: 80vh;          /* Fixed height to fit screen */
+    max-height: 600px;     /* Cap height for larger screens */
+    background: rgba(20, 10, 5, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+/* --- LEFT PANEL: BRANDING --- */
+.left-panel {
+    width: 35%;
+    padding: 40px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+    border-right: 1px solid var(--glass-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+/* Decorative glowing line */
+.left-panel::before {
+    content: "";
+    position: absolute;
+    top: 40px; left: 0;
+    width: 3px; height: 60px;
+    background: var(--pumpkin-glow);
+    box-shadow: 0 0 15px var(--pumpkin-glow);
+}
+
+.title-group h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    line-height: 1.1;
+    color: var(--text-white);
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.title-group p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.stat-box {
+    margin-top: auto;
+    background: var(--glass-surface);
+    border: 1px solid var(--glass-border);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.stat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--pumpkin-glow);
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* --- RIGHT PANEL: FORM --- */
+.right-panel {
+    width: 65%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 10px;
+}
+
+.form-header h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-white);
+    letter-spacing: 0.5px;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px 20px; /* Tighter spacing */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+input {
+    width: 100%;
+    background: var(--glass-surface);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 12px;
+    color: var(--text-white);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    background: rgba(255, 126, 0, 0.1);
+    border-color: var(--pumpkin-glow);
+    box-shadow: 0 0 15px rgba(255, 126, 0, 0.2);
+}
+
+/* --- ACTION BUTTON --- */
+.submit-btn {
+    grid-column: span 2;
+    margin-top: 15px;
+    background: var(--pumpkin-dim);
+    background: linear-gradient(90deg, #e65100, #ff7e00);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 20px rgba(230, 81, 0, 0.4);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(230, 81, 0, 0.6);
+}
+
+/* --- RESULT VIEW --- */
+.result-container {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.match-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    color: var(--pumpkin-glow);
+    margin: 10px 0 20px 0;
+    text-shadow: 0 0 30px rgba(255, 126, 0, 0.4);
+}
+
+.restart-btn {
+    display: inline-block;
+    color: var(--text-white);
+    text-decoration: none;
+    border: 1px solid var(--pumpkin-glow);
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s;
+    margin-top: 30px;
+}
+
+.restart-btn:hover {
+    background: var(--pumpkin-glow);
+    box-shadow: 0 0 20px var(--pumpkin-glow);
+}
+
+/* Mobile Fix */
+@media (max-width: 800px) {
+    .glass-dashboard { flex-direction: column; height: auto; max-height: none; overflow: visible; }
+    .left-panel, .right-panel { width: 100%; padding: 30px; }
+}

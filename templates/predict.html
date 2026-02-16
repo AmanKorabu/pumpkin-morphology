@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="glass-dashboard">
+        
+        <div class="left-panel">
+            <div class="title-group">
+                <h1>Analysis <br> Complete.</h1>
+                <p>The morphology matches a specific profile in the database.</p>
+            </div>
+            
+            <div class="stat-box" style="border-color: #ff7e00;">
+                <span class="stat-label">Status</span>
+                <div style="font-size: 16px; color: #ff7e00; font-weight: 700;">MATCH CONFIRMED</div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="result-container">
+                <div style="font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5);">Identified Variety</div>
+                
+                <h1 class="match-text">
+                    {{ prediction_text.replace("Your seed lies in ", "").replace(" class", "") }}
+                </h1>
+                
+                <p style="color: rgba(255,255,255,0.7); max-width: 400px; font-size: 14px; line-height: 1.6;">
+                    The specimen exhibits the distinct geometric characteristics of the <strong>{{ prediction_text.replace("Your seed lies in ", "").replace(" class", "") }}</strong> variety.
+                </p>
+
+                <a href="/" class="restart-btn">Analyze Another</a>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>

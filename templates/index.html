@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeedGenomics | Night Mode</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="glass-dashboard">
+
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+        <div class="title-group">
+            <h1>Pumpkin <br> Morphology.</h1>
+            <p>Enter geometric parameters to classify seed variety.</p>
+        </div>
+
+        <div class="stat-box">
+            <span class="stat-label">Model Accuracy</span>
+            <div style="font-size: 24px; color: white; font-weight: 700;">98.8%</div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 5px;">
+                Random Forest v2.4
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+
+        <div class="form-header">
+            <h2>Specimen Data</h2>
+            <span style="font-size: 11px; color: #ff7e00;">● SYSTEM READY</span>
+        </div>
+
+        <form action="/predict" method="POST">
+
+            <div class="input-grid">
+
+                <!-- EXACT DATASET ORDER -->
+
+                <!-- 1 -->
+                <div class="input-group">
+                    <label>Area</label>
+                    <input type="number" placeholder="e.g- 56276" step="any" name="Area" required>
+                </div>
+
+                <!-- 2 -->
+                <div class="input-group">
+                    <label>Perimeter</label>
+                    <input type="number" placeholder="e.g- 888.242" step="any" name="Perimeter" required>
+                </div>
+
+                <!-- 3 -->
+                <div class="input-group">
+                    <label>Major_Axis_Length</label>
+                    <input type="number" placeholder="e.g- 326.1485" step="any" name="Major_Axis_Length" required>
+                </div>
+
+                <!-- 4 -->
+                <div class="input-group">
+                    <label>Minor_Axis_Length</label>
+                    <input type="number" placeholder="e.g- 220.2388" step="any" name="Minor_Axis_Length" required>
+                </div>
+
+                <!-- 5 -->
+                <div class="input-group">
+                    <label>Convex_Area</label>
+                    <input type="number" placeholder="e.g- 56831" step="any" name="Convex_Area" required>
+                </div>
+
+                <!-- 6 -->
+                <div class="input-group">
+                    <label>Equiv_Diameter</label>
+                    <input type="number" placeholder="e.g- 267.6805" step="any" name="Equiv_Diameter" required>
+                </div>
+
+                <!-- 7 -->
+                <div class="input-group">
+                    <label>Eccentricity</label>
+                    <input type="number" placeholder="e.g- 0.7376" step="any" name="Eccentricity" required>
+                </div>
+
+                <!-- 8 -->
+                <div class="input-group">
+                    <label>Solidity</label>
+                    <input type="number" placeholder="e.g- 0.9902" step="any" name="Solidity" required>
+                </div>
+
+                <!-- 9 -->
+                <div class="input-group">
+                    <label>Extent</label>
+                    <input type="number" placeholder="e.g- 0.7453" step="any" name="Extent" required>
+                </div>
+
+                <!-- 10 -->
+                <div class="input-group">
+                    <label>Roundness</label>
+                    <input type="number" placeholder="e.g- 0.8963" step="any" name="Roundness" required>
+                </div>
+
+                <!-- 11 -->
+                <div class="input-group">
+                    <label>Aspect_Ration</label>
+                    <input type="number" placeholder="e.g- 1.4809" step="any" name="Aspect_Ration" required>
+                </div>
+
+                <!-- 12 -->
+                <div class="input-group">
+                    <label>Compactness</label>
+                    <input type="number" placeholder="e.g- 0.8207" step="any" name="Compactness" required>
+                </div>
+
+                <!-- SUBMIT BUTTON -->
+                <button type="submit" class="submit-btn">
+                    Identify Variety
+                </button>
+
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
