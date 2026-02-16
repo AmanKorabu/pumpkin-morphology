@@ -2,7 +2,7 @@
 
 📌 Overview
 
-SeedGenomics is an intelligent, web-based classification system designed to distinguish between pumpkin seed varieties (Çerçevelik and Ürgüp Sivrisi) with high precision.
+MorphoSeed AI is an intelligent, web-based classification system designed to distinguish between pumpkin seed varieties (Çerçevelik and Ürgüp Sivrisi) with high precision.
 
 Moving beyond traditional manual inspection, this project leverages machine learning to analyze quantitative morphological features — such as Area, Perimeter, Major Axis Length, and Aspect Ratio — processing them through a custom inference pipeline to provide instant classification.
 
@@ -22,32 +22,24 @@ Moving beyond traditional manual inspection, this project leverages machine lear
 
 🛠️ Tech Stack
 
-Frontend
-
+## Frontend
 HTML5
-
 CSS3 (Custom Glassmorphism Styling)
 
-Backend
-
+## Backend
 Python 3.x
-
 Flask
 
-Machine Learning
-
+## Libraries
 Scikit-learn
-
 NumPy
-
 Pandas
 
-Model Training
-
+## Model Training
 Jupyter Notebook (model_building.ipynb)
 
 📂 Project Structure
-pumpkin-seed/
+MorphoSeedAI/
 │
 ├── static/
 │   └── css/
@@ -64,27 +56,23 @@ pumpkin-seed/
 ├── Pumpkin_Seeds_Dataset.xlsx
 └── README.md
 ⚙️ Installation & Setup
-1️⃣ Prerequisites
+## 1️⃣ Prerequisites
 
 Ensure Python 3.9+ is installed.
 
 Install required libraries:
+ pip install flask scikit-learn pandas numpy openpyxl
 
-pip install flask scikit-learn pandas numpy openpyxl
-2️⃣ Train the Model
+## 2️⃣ Train the Model
 
 Before running the application:
 
 Open model_building.ipynb
 
 Run all cells
-
 Confirm that:
-
 model.pkl
-
 scaler.pkl
-
 are generated in the root folder.
 
 3️⃣ Run the Application
