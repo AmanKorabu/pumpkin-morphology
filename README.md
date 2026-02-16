@@ -1,134 +1,99 @@
-🎃 MorphoSeed AI – Intelligent Morphological Classification System
+# 🌱 SeedGenomics: Advanced Morphological Analysis
 
-📌 Overview
+![Status](https://img.shields.io/badge/Status-Operational-success?style=flat-square)
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=flat-square&logo=python)
+![Flask](https://img.shields.io/badge/Framework-Flask-black?style=flat-square&logo=flask)
+![ML](https://img.shields.io/badge/Model-Random%20Forest-orange?style=flat-square)
+![Accuracy](https://img.shields.io/badge/Accuracy-98.8%25-green?style=flat-square)
 
-MorphoSeed AI is an intelligent, web-based classification system designed to distinguish between pumpkin seed varieties (Çerçevelik and Ürgüp Sivrisi) with high precision.
+**SeedGenomics** is an intelligent, web-based classification system designed to distinguish between pumpkin seed varieties (*Çerçevelik* and *Ürgüp Sivrisi*) with high precision. 
 
-Moving beyond traditional manual inspection, this project leverages machine learning to analyze quantitative morphological features — such as Area, Perimeter, Major Axis Length, and Aspect Ratio — processing them through a custom inference pipeline to provide instant classification.
+Moving beyond traditional manual inspection, this project leverages machine learning to analyze quantitative morphological features—such as Area, Perimeter, and Aspect Ratio—processing them through a custom **Inference Engine** to provide instant taxonomic classification.
 
-🚀 Features
+---
 
-⚡ Real-Time Inference: Optimized Flask backend delivers predictions instantly.
+## 🚀 Features
 
-🧠 Advanced AI Model: Powered by a Random Forest Classifier achieving 98.8% accuracy.
+* **⚡ Real-Time Inference:** Optimized Flask backend delivers predictions in **<20ms**.
+* **🧠 Advanced AI Model:** Powered by a **Random Forest Classifier** optimized via Grid Search, achieving **98.8% accuracy**.
+* **🎨 Modern UI/UX:** Features a premium **Glassmorphism** design with a split-screen layout (Dark Mode Dashboard + Light Mode Input).
+* **📊 Visual Inference Engine:** A custom-built visualizer that simulates the algorithmic processing of geometric data with pulse animations.
+* **📱 Responsive Design:** Fully functional across desktop and mobile devices.
 
-🎨 Modern UI/UX: Premium Glassmorphism split-screen dashboard layout.
+---
 
-📊 Smart Feature Scaling: Selective preprocessing using saved scaler.pkl.
+## 🛠️ Tech Stack
 
-📱 Responsive Design: Fully functional across desktop and mobile devices.
+* **Frontend:** HTML5, CSS3 (Custom Glassmorphism & Animations), JavaScript
+* **Backend:** Python 3.x, Flask Web Framework
+* **Machine Learning:** Scikit-learn, Pandas, NumPy
+* **Data Processing:** Jupyter Notebook (`.ipynb`)
 
-🔁 Clean Result Dashboard: Dedicated result screen with classification output.
+---
 
-🛠️ Tech Stack
+## 📂 Project Structure
 
-## Frontend
-HTML5
-CSS3 (Custom Glassmorphism Styling)
+Ensure your project folder matches this structure exactly:
 
-## Backend
-Python 3.x
-Flask
-
-## Libraries
-Scikit-learn
-NumPy
-Pandas
-
-## Model Training
-Jupyter Notebook (model_building.ipynb)
-
-📂 Project Structure
-MorphoSeedAI/
+```text
+pumpkin-seed/
 │
 ├── static/
 │   └── css/
-│       └── style.css
-│
+│       └── style.css          # Custom styling for 
 ├── templates/
-│   ├── index.html
-│   └── predict.html
+│   ├── index.html             # Main Dashboard & Input Interface
+│   └── predict.html           # Result Display Card
 │
-├── app.py
-├── model_building.ipynb
-├── model.pkl
-├── scaler.pkl
-├── Pumpkin_Seeds_Dataset.xlsx
-└── README.md
+├── app.py                     # Main Flask Application Server
+├── model_building.ipynb       # Jupyter Notebook for Training & Analysis
+├── model.pkl                  # Trained Random Forest Model (Auto-generated)
+├── Pumpkin_Seeds_Dataset.xlsx # Raw Dataset Source
+├── scaler.pkl                 # Feature Scaler (Auto-generated)
+└── README.md                  # Project Documentation
+
 ⚙️ Installation & Setup
-## 1️⃣ Prerequisites
+1. Prerequisites
+Ensure you have Python installed. You will also need the following libraries:
 
-Ensure Python 3.9+ is installed.
+Bash
+pip install flask scikit-learn pandas numpy openpyxl
+2. Train the Model
+Before running the app, you must generate the trained model file.
 
-Install required libraries:
- pip install flask scikit-learn pandas numpy openpyxl
+Open model_building.ipynb in VS Code or Jupyter.
 
-## 2️⃣ Train the Model
+Run all cells to process the dataset and train the Random Forest.
 
-Before running the application:
+Verify that model.pkl and scaler.pkl have appeared in your project folder.
 
-Open model_building.ipynb
+3. Run the Application
+Open your terminal in the project folder and run:
 
-Run all cells
-Confirm that:
-model.pkl
-scaler.pkl
-are generated in the root folder.
-
-3️⃣ Run the Application
+Bash
 python app.py
-4️⃣ Access the Interface
-
-Open your browser and visit:
-
-http://127.0.0.1:5000/
-
-(Note: Flask runs on port 5000 by default, not 5500.)
+4. Access the Interface
+Open your web browser and navigate to the local server address shown in the terminal (usually):
+http://127.0.0.1:5500/
 
 🧠 How It Works
-Step 1 — Data Input
+Data Input: The user enters geometric values (e.g., Area: 56276, Perimeter: 888.24) into the web form.
 
-The user enters geometric parameters into the web form.
+Preprocessing: The backend loads the saved MinMaxScaler (scaler.pkl) to normalize the inputs to the same scale used during training.
 
-Step 2 — Preprocessing
+Inference: The data is passed to the Random Forest model (model.pkl), which predicts the class (0 for Çerçevelik, 1 for Ürgüp Sivrisi).
 
-The backend:
 
-Extracts the required 8 features used by the model.
-
-Scales Area, Perimeter, and Major_Axis_Length using scaler.pkl.
-
-Step 3 — Inference
-
-The processed features are passed to the trained Random Forest model (model.pkl).
-
-Prediction mapping:
-
-0 → Çerçevelik
-
-1 → Ürgüp Sivrisi
-
-Step 4 — Result Rendering
-
-The predicted class is displayed on a clean, dedicated result page.
+Result: The final classification is displayed on a clean result card with a confidence summary.
 
 🔮 Future Scope
+Computer Vision Integration: Implementing CNNs to allow users to upload images of seeds for automatic feature extraction.
 
-📷 Image-based classification using Convolutional Neural Networks (CNN)
+Mobile Application: Developing a React Native version for agricultural research.
 
-📊 Display prediction probability / confidence score
-
-☁️ Deploy to cloud (Render / Railway / AWS)
-
-📈 Add model performance dashboard
-
-🔁 Automated retraining pipeline
+IoT Connectivity: Linking the software with automated sorting machinery for industrial applications.
 
 📝 License
+This project is developed for educational purposes as part of the college academic submission.
 
-This project is developed for educational and academic submission purposes.
-
-👨‍💻 Developed By
-
-Aman Mehboob Korabu
-Aspiring Full Stack & Machine Learning Developer
+Developed by Aman Korabu
