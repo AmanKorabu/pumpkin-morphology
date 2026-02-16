@@ -8,7 +8,7 @@
 
 **MorphoSeed AI** is an intelligent, web-based classification system designed to distinguish between pumpkin seed varieties (*Çerçevelik* and *Ürgüp Sivrisi*) with high precision. 
 
-Moving beyond traditional manual inspection, this project leverages machine learning to analyze quantitative morphological features—such as Area, Perimeter, and Aspect Ratio—processing them through a custom **Inference Engine** to provide instant taxonomic classification.
+Instead of relying on manual evaluation, this application utilizes a trained machine learning model to analyze critical morphological measurements such as Area, Perimeter, and Aspect Ratio, transforming them through a preprocessing and inference pipeline to generate precise classification results in real time.
 
 ---
 
@@ -16,7 +16,7 @@ Moving beyond traditional manual inspection, this project leverages machine lear
 
 * **⚡ Real-Time Inference:** Optimized Flask backend delivers predictions in **<20ms**.
 * **🧠 Advanced AI Model:** Powered by a **Random Forest Classifier** optimized via Grid Search, achieving **98.8% accuracy**.
-* **🎨 Modern UI/UX:** Features a premium **Glassmorphism** design with a split-screen layout (Dark Mode Dashboard + Light Mode Input).
+* **🎨 Modern UI/UX:** Features a premium **Glassmorphism design** with a clean split-screen layout (Dark Mode Dashboard + Light Mode Input Panel).
 * **📊 Visual Inference Engine:** A custom-built visualizer that simulates the algorithmic processing of geometric data with pulse animations.
 * **📱 Responsive Design:** Fully functional across desktop and mobile devices.
 
@@ -58,6 +58,7 @@ Ensure you have Python installed. You will also need the following libraries:
 
 Bash
 pip install flask scikit-learn pandas numpy openpyxl
+
 2. Train the Model
 Before running the app, you must generate the trained model file.
 
