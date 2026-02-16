@@ -1,4 +1,4 @@
-# 🌱 SeedGenomics: Advanced Morphological Analysis
+# 🎃 MorphoSeed AI: Advanced Morphological Analysis
 
 ![Status](https://img.shields.io/badge/Status-Operational-success?style=flat-square)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=flat-square&logo=python)
@@ -6,7 +6,7 @@
 ![ML](https://img.shields.io/badge/Model-Random%20Forest-orange?style=flat-square)
 ![Accuracy](https://img.shields.io/badge/Accuracy-98.8%25-green?style=flat-square)
 
-**SeedGenomics** is an intelligent, web-based classification system designed to distinguish between pumpkin seed varieties (*Çerçevelik* and *Ürgüp Sivrisi*) with high precision. 
+**MorphoSeed AI** is an intelligent, web-based classification system designed to distinguish between pumpkin seed varieties (*Çerçevelik* and *Ürgüp Sivrisi*) with high precision. 
 
 Moving beyond traditional manual inspection, this project leverages machine learning to analyze quantitative morphological features—such as Area, Perimeter, and Aspect Ratio—processing them through a custom **Inference Engine** to provide instant taxonomic classification.
 
@@ -89,7 +89,7 @@ Result: The final classification is displayed on a clean result card with a conf
 🔮 Future Scope
 Computer Vision Integration: Implementing CNNs to allow users to upload images of seeds for automatic feature extraction.
 
-Mobile Application: Developing a React Native version for agricultural research.
+Mobile Application: Developing a React Native version for agricultural research study.
 
 IoT Connectivity: Linking the software with automated sorting machinery for industrial applications.
 
